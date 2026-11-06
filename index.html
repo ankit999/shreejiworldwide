@@ -43,6 +43,7 @@
     .brand-tag { display: block; color: #718096; font-size: 9px; font-weight: 800; letter-spacing: 2.1px; margin-top: 4px; }
     .nav-links { display: flex; align-items: center; gap: 30px; font-size: 14px; font-weight: 650; color: #40516a; }
     .nav-links a:hover { color: var(--orange-dark); }
+    .nav-links a.nav-track { color: var(--orange-dark); font-weight: 850; }
     .btn { display: inline-flex; align-items: center; justify-content: center; gap: 9px; border: 0; border-radius: 9px; padding: 13px 20px; font: inherit; font-size: 14px; font-weight: 800; cursor: pointer; transition: transform .2s, background .2s, box-shadow .2s; }
     .btn:hover { transform: translateY(-2px); }
     .btn-primary { color: #fff; background: var(--orange); box-shadow: 0 9px 22px rgba(242,138,36,.25); }
@@ -80,6 +81,20 @@
     .floating-card svg { color: #ffb45f; width: 23px; height: 23px; }
     .card-a { top: 13%; right: -1%; }
     .card-b { bottom: 13%; left: -2%; }
+    .tracking-section { padding: 68px 0; background: linear-gradient(180deg, #f5f8fc 0%, #fff 100%); border-bottom: 1px solid var(--line); }
+    .tracking-card { width: min(760px, 100%); margin: 0 auto; padding: 34px; border: 1px solid var(--line); border-radius: 20px; background: #fff; box-shadow: var(--shadow); text-align: center; }
+    .tracking-icon { width: 54px; height: 54px; display: grid; place-items: center; margin: 0 auto 15px; border-radius: 16px; color: var(--orange-dark); background: #fff3e6; }
+    .tracking-icon svg { width: 27px; height: 27px; }
+    .tracking-card h2 { margin: 0 0 8px; color: var(--navy); font-size: clamp(26px, 4vw, 34px); letter-spacing: -.8px; }
+    .tracking-card > p { margin: 0 auto 23px; max-width: 530px; color: var(--muted); font-size: 14px; }
+    .tracking-form { display: flex; gap: 10px; max-width: 590px; margin: 0 auto; }
+    .tracking-form input { flex: 1; min-width: 0; padding: 14px 16px; border: 1px solid #ccd6e2; border-radius: 9px; color: var(--ink); font: inherit; font-size: 14px; outline: none; }
+    .tracking-form input:focus { border-color: var(--orange); box-shadow: 0 0 0 3px rgba(242,138,36,.13); }
+    .tracking-result { display: none; max-width: 590px; margin: 18px auto 0; padding: 17px; border: 1px solid #f3d6b5; border-radius: 12px; background: #fff9f2; color: #67421f; text-align: left; }
+    .tracking-result.is-visible { display: block; }
+    .tracking-result strong { display: block; margin-bottom: 5px; color: #563512; }
+    .tracking-result p { margin: 0 0 10px; font-size: 14px; }
+    .tracking-result a { color: #a95408; font-weight: 850; text-decoration: underline; text-underline-offset: 3px; }
     .trust-strip { background: #fff; border-bottom: 1px solid var(--line); }
     .trust-inner { display: grid; grid-template-columns: repeat(3, 1fr); padding: 24px 0; gap: 20px; }
     .trust-item { display: flex; justify-content: center; align-items: center; gap: 12px; color: #31445c; font-size: 13px; font-weight: 750; }
@@ -193,6 +208,9 @@
       .cta-inner { display: block; }
       .cta .btn { margin-top: 22px; }
       .contact-card { padding: 24px 20px; }
+      .tracking-card { padding: 27px 19px; }
+      .tracking-form { flex-direction: column; }
+      .tracking-form .btn { width: 100%; }
       .contact-actions { grid-template-columns: 1fr; }
       .footer-inner { flex-direction: column; align-items: flex-start; }
       .footer-links { flex-wrap: wrap; gap: 14px; }
@@ -220,7 +238,7 @@
         <span><span class="brand-name">SHREEJI WORLDWIDE</span><span class="brand-tag">COURIER &amp; LOGISTICS</span></span>
       </a>
       <nav class="nav-links" aria-label="Main navigation">
-        <a href="#home">Home</a><a href="#about">About</a><a href="#services">Services</a><a href="#process">How It Works</a><a href="#contact">Contact</a>
+        <a href="#home">Home</a><a class="nav-track" href="#track">Track Shipment</a><a href="#about">About</a><a href="#services">Services</a><a href="#process">How It Works</a><a href="#contact">Contact</a>
       </nav>
       <a class="btn btn-primary" href="https://wa.me/918128440888?text=Hello%20Shreeji%20Worldwide%2C%20I%20would%20like%20to%20enquire%20about%20courier%20services." target="_blank" rel="noopener">Get a Quote <span aria-hidden="true">↗</span></a>
     </div>
@@ -254,6 +272,29 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11Z"/><path d="m9 12 2 2 4-4"/></svg>
               <span><strong>Careful handling</strong><small>Your shipment matters</small></span>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="tracking-section" id="track" aria-labelledby="tracking-title">
+      <div class="container">
+        <div class="tracking-card">
+          <div class="tracking-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7.5 12 3l9 4.5v9L12 21l-9-4.5v-9Z"/><path d="m3.5 7.7 8.5 4.4 8.5-4.4M12 12.1V21M8 5l9 4.6"/><circle cx="18" cy="17" r="4" fill="#fff"/><path d="m20.8 19.8 1.7 1.7"/></svg>
+          </div>
+          <div class="section-kicker">Shipment updates</div>
+          <h2 id="tracking-title">Track Your Shipment</h2>
+          <p>Enter your AWB or tracking number below to check your shipment. If tracking details are unavailable, our team will be happy to assist you.</p>
+          <form class="tracking-form" id="tracking-form">
+            <label for="tracking-number" class="sr-only">AWB / Tracking Number</label>
+            <input id="tracking-number" name="tracking-number" type="text" placeholder="Enter AWB / Tracking Number" autocomplete="off" required maxlength="80">
+            <button class="btn btn-primary" type="submit">Track Shipment <span aria-hidden="true">→</span></button>
+          </form>
+          <div class="tracking-result" id="tracking-result" role="status" aria-live="polite">
+            <strong>Unable to track this shipment</strong>
+            <p>We couldn’t retrieve tracking information for the shipment number entered. Please contact our team on WhatsApp for assistance.</p>
+            <a id="tracking-whatsapp" href="https://wa.me/918128440888" target="_blank" rel="noopener">WhatsApp: +91 81284 40888 ↗</a>
           </div>
         </div>
       </div>
@@ -434,6 +475,24 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    const trackingForm = document.getElementById('tracking-form');
+    const trackingNumber = document.getElementById('tracking-number');
+    const trackingResult = document.getElementById('tracking-result');
+    const trackingWhatsApp = document.getElementById('tracking-whatsapp');
+
+    trackingForm.addEventListener('submit', function (event) {
+      event.preventDefault();
+      const awb = trackingNumber.value.trim();
+      if (!awb) {
+        trackingNumber.focus();
+        return;
+      }
+      const message = 'Hello Shreeji Worldwide, I need help tracking my shipment. My AWB / Tracking Number is: ' + awb;
+      trackingWhatsApp.href = 'https://wa.me/918128440888?text=' + encodeURIComponent(message);
+      trackingResult.classList.add('is-visible');
+      trackingResult.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
   </script>
 </body>
 </html>
