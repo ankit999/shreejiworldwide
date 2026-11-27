@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Shreeji Worldwide provides international courier and shipping assistance from Anjar, Kutch, Gujarat. Contact us for your global shipping requirements.">
+  <meta name="description" content="Shreeji Worldwide provides international courier and shipping assistance across Kutch, Gujarat. Contact us for your global shipping requirements.">
   <meta name="theme-color" content="#0b1f3a">
   <title>Shreeji Worldwide | International Courier & Shipping</title>
   <style>
@@ -35,13 +35,26 @@
     .topbar-inner { min-height: 38px; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
     .topbar a { color: #fff; font-weight: 700; }
     header { position: sticky; top: 0; z-index: 20; background: rgba(255,255,255,.96); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(229,235,242,.9); }
-    .nav { height: 82px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .container.nav { width: min(100% - 48px, 1600px); margin: 0 auto; }
+    .nav { height: 82px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .nav-links { flex: 1 1 auto; justify-content: center; gap: clamp(14px, 1.35vw, 24px); font-size: clamp(13px, 1vw, 15px); }
     .brand { display: inline-flex; align-items: center; gap: 11px; min-width: 220px; }
     .brand-mark { width: 44px; height: 44px; display: grid; place-items: center; border-radius: 13px; color: #fff; background: linear-gradient(145deg, var(--orange), #ffb04e); box-shadow: 0 7px 18px rgba(242,138,36,.28); }
     .brand-mark svg { width: 27px; height: 27px; }
     .brand-name { display: block; color: var(--navy); font-weight: 850; font-size: 19px; line-height: 1.1; letter-spacing: -.5px; }
     .brand-tag { display: block; color: #718096; font-size: 9px; font-weight: 800; letter-spacing: 2.1px; margin-top: 4px; }
-    .nav-links { display: flex; align-items: center; gap: 30px; font-size: 14px; font-weight: 650; color: #40516a; }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      flex-wrap: nowrap;
+      gap: clamp(12px, 1.25vw, 20px);
+      min-width: 0;
+      white-space: nowrap;
+      font-size: 16px;
+      font-weight: 700;
+      color: #40516a;
+    }
+    .nav-links a { flex: 0 0 auto; white-space: nowrap; }
     .nav-links a:hover { color: var(--orange-dark); }
     .nav-links a.nav-track { color: var(--orange-dark); font-weight: 850; }
     .btn { display: inline-flex; align-items: center; justify-content: center; gap: 9px; border: 0; border-radius: 9px; padding: 13px 20px; font: inherit; font-size: 14px; font-weight: 800; cursor: pointer; transition: transform .2s, background .2s, box-shadow .2s; }
@@ -95,6 +108,32 @@
     .tracking-result strong { display: block; margin-bottom: 5px; color: #563512; }
     .tracking-result p { margin: 0 0 10px; font-size: 14px; }
     .tracking-result a { color: #a95408; font-weight: 850; text-decoration: underline; text-underline-offset: 3px; }
+    .pickup-section { background: var(--paper); }
+    .pickup-card { max-width: 850px; margin: 0 auto; padding: 34px; border: 1px solid var(--line); border-radius: 20px; background: #fff; box-shadow: var(--shadow); }
+    .pickup-form { display: grid; grid-template-columns: 1fr 1fr; gap: 19px; }
+    .form-field { display: grid; gap: 7px; }
+    .form-field label, .field-label { color: #31445c; font-size: 13px; font-weight: 800; }
+    .form-field input, .form-field select { width: 100%; min-width: 0; padding: 13px 14px; border: 1px solid #ccd6e2; border-radius: 9px; color: var(--ink); background: #fff; font: inherit; font-size: 14px; outline: none; }
+    .form-field input:focus, .form-field select:focus { border-color: var(--orange); box-shadow: 0 0 0 3px rgba(242,138,36,.13); }
+    .radio-options { display: flex; flex-wrap: wrap; gap: 22px; min-height: 48px; align-items: center; }
+    .radio-options label { display: inline-flex; align-items: center; gap: 8px; color: #40516a; font-size: 14px; font-weight: 650; cursor: pointer; }
+    .radio-options input { accent-color: var(--orange); width: 17px; height: 17px; }
+    .pickup-submit { grid-column: 1 / -1; display: flex; justify-content: flex-start; margin-top: 3px; }
+    .pickup-submit .btn { min-width: 210px; }
+    .query-section { background: var(--paper); }
+    .query-card { max-width: 850px; margin: 0 auto; padding: 34px; border: 1px solid var(--line); border-radius: 20px; background: #fff; box-shadow: var(--shadow); }
+    .query-form { display: grid; gap: 18px; }
+    .query-form select, .query-form textarea { width: 100%; padding: 13px 14px; border: 1px solid #ccd6e2; border-radius: 9px; color: var(--ink); background: #fff; font: inherit; font-size: 14px; outline: none; }
+    .query-form textarea { min-height: 145px; resize: vertical; }
+    .query-form select:focus, .query-form textarea:focus { border-color: var(--orange); box-shadow: 0 0 0 3px rgba(242,138,36,.13); }
+    .query-submit { display: flex; justify-content: flex-start; }
+    .query-submit .btn { min-width: 190px; }
+    .partner-section { padding: 70px 0; }
+    .partner-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; align-items: center; }
+    .partner-logo { min-height: 142px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 13px; padding: 18px; border: 1px solid var(--line); border-radius: 15px; background: #fff; box-shadow: 0 8px 24px rgba(11,31,58,.05); }
+    .partner-logo img { display: block; width: 100%; max-width: 155px; height: 58px; object-fit: contain; }
+    .partner-logo img.ups-mark { max-width: 58px; height: 58px; }
+    .partner-logo .partner-name { color: var(--navy); font-size: 14px; font-weight: 850; letter-spacing: .1px; line-height: 1.2; }
     .trust-strip { background: #fff; border-bottom: 1px solid var(--line); }
     .trust-inner { display: grid; grid-template-columns: repeat(3, 1fr); padding: 24px 0; gap: 20px; }
     .trust-item { display: flex; justify-content: center; align-items: center; gap: 12px; color: #31445c; font-size: 13px; font-weight: 750; }
@@ -172,8 +211,22 @@
     .footer-links a:hover { color: #ffb45f; }
     .wa-float { position: fixed; right: 22px; bottom: 22px; z-index: 30; width: 54px; height: 54px; border-radius: 50%; display: grid; place-items: center; color: #fff; background: #20b96b; box-shadow: 0 8px 24px rgba(0,0,0,.2); }
     .wa-float svg { width: 26px; height: 26px; }
+    @media (min-width: 901px) and (max-width: 1150px) {
+      .nav-links { font-size: 14px; gap: 12px; }
+      .brand { min-width: 205px; }
+      .nav { gap: 12px; }
+    }
     @media (max-width: 900px) {
-      .nav-links { gap: 17px; }
+      .nav-links {
+        flex: 1 1 auto;
+        gap: 14px;
+        font-size: 14px;
+        overflow-x: auto;
+        scrollbar-width: none;
+      }
+      .nav-links::-webkit-scrollbar { display: none; }
+      .nav { gap: 14px; }
+      .brand { min-width: 190px; }
       .hero-inner { grid-template-columns: 1fr  .8fr; }
       .hero-art { transform: scale(.9); }
       .about-grid, .why-grid { gap: 35px; }
@@ -182,6 +235,7 @@
     }
     @media (max-width: 680px) {
       .container { width: min(100% - 32px, 520px); }
+      .container.nav { width: min(100% - 32px, 520px); }
       .topbar-inner { justify-content: center; }
       .topbar .top-location { display: none; }
       .nav { height: 70px; }
@@ -210,6 +264,17 @@
       .contact-card { padding: 24px 20px; }
       .tracking-card { padding: 27px 19px; }
       .tracking-form { flex-direction: column; }
+      .pickup-card { padding: 25px 19px; }
+      .pickup-form { grid-template-columns: 1fr; gap: 15px; }
+      .pickup-submit { grid-column: auto; }
+      .pickup-submit .btn { width: 100%; }
+      .query-card { padding: 25px 19px; }
+      .query-submit .btn { width: 100%; }
+      .partner-grid { grid-template-columns: repeat(2, 1fr); gap: 11px; }
+      .partner-logo { min-height: 128px; padding: 13px 10px; gap: 10px; }
+      .partner-logo img { max-width: 135px; height: 50px; }
+      .partner-logo img.ups-mark { max-width: 50px; height: 50px; }
+      .partner-logo .partner-name { font-size: 13px; }
       .tracking-form .btn { width: 100%; }
       .contact-actions { grid-template-columns: 1fr; }
       .footer-inner { flex-direction: column; align-items: flex-start; }
@@ -224,7 +289,7 @@
 <body>
   <div class="topbar">
     <div class="container topbar-inner">
-      <span class="top-location">Your shipping connection from Anjar, Kutch to the world</span>
+      <span class="top-location">Your shipping connection from Kutch to the world</span>
       <span>Call us: <a href="tel:+918128440888">+91 81284 40888</a></span>
     </div>
   </div>
@@ -235,10 +300,10 @@
         <span class="brand-mark" aria-hidden="true">
           <svg viewBox="0 0 32 32" fill="none"><path d="M4 17.5 15.8 5l12.1 12.5-12.1 9.8L4 17.5Z" stroke="currentColor" stroke-width="2.1" stroke-linejoin="round"/><path d="M9 17.5h14M16 10v15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="m22 7 5-3M25 12l5-1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
         </span>
-        <span><span class="brand-name">SHREEJI WORLDWIDE</span><span class="brand-tag">COURIER &amp; LOGISTICS</span></span>
+        <span><span class="brand-name">SHREEJI WORLDWIDE</span><span class="brand-tag">COURIER &amp; CARGO</span></span>
       </a>
       <nav class="nav-links" aria-label="Main navigation">
-        <a href="#home">Home</a><a class="nav-track" href="#track">Track Shipment</a><a href="#about">About</a><a href="#services">Services</a><a href="#process">How It Works</a><a href="#contact">Contact</a>
+        <a href="#home">Home</a><a class="nav-track" href="#track">Track Shipment</a><a href="#about">About</a><a href="#services">Services</a><a href="#pickup">Pick-Up</a><a href="#query">Submit Query</a><a href="#process">How It Works</a><a href="#contact">Contact</a>
       </nav>
       <a class="btn btn-primary" href="https://wa.me/918128440888?text=Hello%20Shreeji%20Worldwide%2C%20I%20would%20like%20to%20enquire%20about%20courier%20services." target="_blank" rel="noopener">Get a Quote <span aria-hidden="true">↗</span></a>
     </div>
@@ -249,15 +314,15 @@
       <div class="container hero-inner">
         <div>
           <div class="eyebrow">Connecting you to the world</div>
-          <h1>Your world.<br><span>Our delivery.</span></h1>
-          <p class="hero-copy">From important documents to parcels and business shipments, Shreeji Worldwide helps connect Anjar, Kutch with destinations across the globe.</p>
+          <h1>Your Customised<br><span>Logistic Partner.</span></h1>
+          <p class="hero-copy">From important documents to parcels, Shreeji Worldwide helps connect Kutch with destinations across the globe.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="https://wa.me/918128440888?text=Hello%20Shreeji%20Worldwide%2C%20please%20share%20a%20courier%20quote." target="_blank" rel="noopener">Enquire Now <span aria-hidden="true">→</span></a>
             <a class="btn btn-outline" href="#services">Explore Services</a>
           </div>
           <div class="hero-note">
             <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>
-            Based in Anjar, Kutch, Gujarat, India
+            Serving Kutch, Gujarat, India
           </div>
         </div>
         <div class="hero-art" aria-label="Illustration representing global shipping">
@@ -300,6 +365,49 @@
       </div>
     </section>
 
+    <section class="pickup-section" id="pickup" aria-labelledby="pickup-title">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">Convenient collection</div>
+          <h2 id="pickup-title">Pick-Up Request</h2>
+          <p>Share your shipment details and our team will get in touch to coordinate your pick-up request.</p>
+        </div>
+        <div class="pickup-card">
+          <form class="pickup-form" id="pickup-form">
+            <div class="form-field" style="grid-column:1 / -1">
+              <span class="field-label">Type</span>
+              <div class="radio-options">
+                <label><input type="radio" name="shipment-type" value="Domestic" required> Domestic</label>
+                <label><input type="radio" name="shipment-type" value="International" required> International</label>
+              </div>
+            </div>
+            <div class="form-field">
+              <label for="pickup-from">From</label>
+              <select id="pickup-from" name="from" required>
+                <option value="" selected disabled>Select City</option>
+                <option>Bhuj</option><option>Anjar</option><option>Gandhidham</option><option>Mundra</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label for="pickup-to">To</label>
+              <input id="pickup-to" name="to" type="text" placeholder="Destination city / country" required maxlength="120">
+            </div>
+            <div class="form-field">
+              <label for="pickup-weight">Weight (approx.)</label>
+              <input id="pickup-weight" name="weight" type="text" placeholder="e.g. 2 kg" required maxlength="40">
+            </div>
+            <div class="form-field">
+              <label for="pickup-contact">Contact No.</label>
+              <input id="pickup-contact" name="contact" type="tel" placeholder="Enter your contact number" required maxlength="20" inputmode="tel">
+            </div>
+            <div class="pickup-submit">
+              <button class="btn btn-primary" type="submit">Submit Pick-Up Request <span aria-hidden="true">→</span></button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
     <div class="trust-strip">
       <div class="container trust-inner">
         <div class="trust-item"><span class="trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg></span>International shipping assistance</div>
@@ -319,13 +427,13 @@
         <div class="about-copy">
           <div class="section-kicker">About Shreeji Worldwide</div>
           <h2>Taking your shipments beyond boundaries.</h2>
-          <p>Shreeji Worldwide is a courier service business based in Anjar, Kutch, Gujarat. We aim to make sending shipments across borders simpler by helping customers explore suitable international courier options.</p>
+          <p>Shreeji Worldwide is a courier service business serving Kutch, Gujarat. We aim to make sending shipments across borders simpler by helping customers explore suitable international courier options.</p>
           <p>Whether you are sending personal parcels or business consignments, our team is here to understand your requirement and guide you through the next steps.</p>
           <ul class="check-list">
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 4 4L19 6"/></svg>Personal and business enquiries</li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 4 4L19 6"/></svg>International courier assistance</li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 4 4L19 6"/></svg>Support with shipment requirements</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 4 4L19 6"/></svg>Local presence in Anjar, Kutch</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 4 4L19 6"/></svg>Local presence across Kutch</li>
           </ul>
         </div>
       </div>
@@ -341,18 +449,18 @@
         <div class="service-grid">
           <article class="service-card">
             <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v16H4zM8 8h8M8 12h8M8 16h5"/></svg></div>
-            <h3>International Documents</h3>
+            <h3>International Courier</h3>
             <p>Courier assistance for important personal, academic and business documents to overseas destinations.</p>
           </article>
           <article class="service-card">
             <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m12 3 9 5-9 5-9-5 9-5Z"/><path d="m3 8 9 5 9-5M3 8v9l9 5 9-5V8M12 13v9"/></svg></div>
-            <h3>International Parcels</h3>
-            <p>Explore shipping options for personal parcels, gifts and eligible non-document shipments.</p>
+            <h3>Domestic Courier</h3>
+            <p>Courier assistance for important personal, academic and business documents to any destination in India.</p>
           </article>
           <article class="service-card">
             <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 16h20M4 16l2-7h12l2 7M7 9l2-5h6l2 5M7 20h.01M17 20h.01"/></svg></div>
-            <h3>Business Shipments</h3>
-            <p>Courier support for businesses that need to send eligible consignments to customers or partners abroad.</p>
+            <h3>Packaging Services</h3>
+            <p>We provide suitable packaging solutions to ensure your shipments are properly packed for safe transit.</p>
           </article>
           <article class="service-card">
             <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 12h20M12 2v20M4.9 4.9l14.2 14.2M19.1 4.9 4.9 19.1"/></svg></div>
@@ -369,6 +477,38 @@
             <h3>Customer Assistance</h3>
             <p>Speak with our team to discuss your shipment, destination and next steps before booking.</p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="partner-section" id="partners" aria-labelledby="partners-title">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">Our network</div>
+          <h2 id="partners-title">Our Partners</h2>
+          <p>Courier and logistics brands in our partner network.</p>
+        </div>
+        <div class="partner-grid" aria-label="Courier partners">
+          <div class="partner-logo">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/DHL_Logo.svg" alt="DHL official wordmark" loading="lazy">
+            <span class="partner-name">DHL</span>
+          </div>
+          <div class="partner-logo">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/FedEx_Wordmark.svg" alt="FedEx official wordmark" loading="lazy">
+            <span class="partner-name">FedEx</span>
+          </div>
+          <div class="partner-logo">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Aramex_logo.svg" alt="Aramex official wordmark" loading="lazy">
+            <span class="partner-name">Aramex</span>
+          </div>
+          <div class="partner-logo">
+            <img class="ups-mark" src="https://commons.wikimedia.org/wiki/Special:FilePath/UPS_Logo_Shield_2017.svg" alt="UPS shield logo" loading="lazy">
+            <span class="partner-name">UPS</span>
+          </div>
+          <div class="partner-logo">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/DPD_logo_%282015%29.svg" alt="DPD official logo" loading="lazy">
+            <span class="partner-name">DPD</span>
+          </div>
         </div>
       </div>
     </section>
@@ -390,17 +530,17 @@
             </div>
             <div class="why-point">
               <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
-              <div><h3>Rooted in Anjar, Kutch</h3><p>A local business ready to assist customers with international courier enquiries.</p></div>
+              <div><h3>Rooted in Kutch</h3><p>A local business ready to assist customers with international courier enquiries.</p></div>
             </div>
           </div>
         </div>
         <div class="why-panel">
           <div class="panel-label">Your shipping partner</div>
-          <h3>From Anjar to destinations around the world.</h3>
+          <h3>From Kutch to destinations around the world.</h3>
           <p>Connect with Shreeji Worldwide for your international courier requirements. Share your destination and shipment details to get started.</p>
           <div class="panel-location">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>
-            Anjar, Kutch, Gujarat, India
+            Our Branches: Bhuj, Anjar, Gandhidham, Mundra
           </div>
         </div>
       </div>
@@ -429,6 +569,36 @@
       </div>
     </section>
 
+    <section class="query-section" id="query" aria-labelledby="query-title">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">We’re here to help</div>
+          <h2 id="query-title">Submit Your Query and Get Quick Response</h2>
+          <p>Choose the type of enquiry and tell us how we can help. Our team will get back to you.</p>
+        </div>
+        <div class="query-card">
+          <form class="query-form" id="query-form">
+            <div class="form-field">
+              <label for="query-type">Query Type</label>
+              <select id="query-type" name="query-type" required>
+                <option value="" selected disabled>Select query type</option>
+                <option>New Shipment</option>
+                <option>Existing Shipment</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label for="query-message">Your Query</label>
+              <textarea id="query-message" name="query-message" placeholder="Please write your query here..." required maxlength="2000"></textarea>
+            </div>
+            <div class="query-submit">
+              <button class="btn btn-primary" type="submit">Submit Query <span aria-hidden="true">→</span></button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
     <section id="contact">
       <div class="container contact-grid">
         <div class="contact-copy">
@@ -442,7 +612,7 @@
             </div>
             <div class="contact-row">
               <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
-              <div><small>Main branch</small><strong>Anjar, Kutch, Gujarat, India</strong></div>
+              <div><small>Our Branches</small><strong>Bhuj, Anjar, Gandhidham, Mundra</strong></div>
             </div>
             <div class="contact-row">
               <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg></div>
@@ -492,6 +662,37 @@
       trackingWhatsApp.href = 'https://wa.me/918128440888?text=' + encodeURIComponent(message);
       trackingResult.classList.add('is-visible');
       trackingResult.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+
+    const pickupForm = document.getElementById('pickup-form');
+    pickupForm.addEventListener('submit', function (event) {
+      event.preventDefault();
+      if (!pickupForm.reportValidity()) return;
+      const data = new FormData(pickupForm);
+      const message = [
+        'Hello Shreeji Worldwide, I would like to submit a pick-up request.',
+        '',
+        'Type: ' + data.get('shipment-type'),
+        'From: ' + data.get('from'),
+        'To: ' + data.get('to').trim(),
+        'Approx. Weight: ' + data.get('weight').trim(),
+        'Contact No.: ' + data.get('contact').trim()
+      ].join('\n');
+      window.open('https://wa.me/918128440888?text=' + encodeURIComponent(message), '_blank', 'noopener');
+    });
+
+    const queryForm = document.getElementById('query-form');
+    queryForm.addEventListener('submit', function (event) {
+      event.preventDefault();
+      if (!queryForm.reportValidity()) return;
+      const data = new FormData(queryForm);
+      const message = [
+        'Hello Shreeji Worldwide, I would like to submit a query.',
+        '',
+        'Query Type: ' + data.get('query-type'),
+        'Query: ' + data.get('query-message').trim()
+      ].join('\\n');
+      window.open('https://wa.me/918128440888?text=' + encodeURIComponent(message), '_blank', 'noopener');
     });
   </script>
 </body>
